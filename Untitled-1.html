@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffecd2;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+        h1 {
+            font-size: 4rem;
+            color: #ff6f61;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .birthday-image {
+            margin-top: 30px;
+        }
+        .birthday-image img {
+            width: 300px;
+        }
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .confetti div {
+            position: absolute;
+            background-color: #ff6f61;
+            width: 15px;
+            height: 15px;
+            animation: fall 5s infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti">
+        <!-- confetti elements go here -->
+        <div style="top:0; left:5%;"></div>
+        <div style="top:0; left:25%;"></div>
+        <div style="top:0; left:50%;"></div>
+        <div style="top:0; left:75%;"></div>
+        <div style="top:0; left:90%;"></div>
+    </div>
+
+    <div class="container">
+        <h1>Happy Birthday Kavyaaaaa</h1>
+        <p>Wishing you a day filled with love, joy, and everything you enjoy most.</p>
+        <div class="birthday-image">
+            <img src="birthday-cake.png" alt="Birthday Cake">
+        </div>
+    </div>
+
+    <script>
+        // Confetti falling script
+        const confettiContainer = document.querySelector('.confetti');
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDelay = Math.random() * 5 + 's';
+            confettiContainer.appendChild(confetti);
+        }
+    </script>
+</body>
+</html>
